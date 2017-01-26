@@ -37,9 +37,36 @@ function onEditorChange(editor) {
       });
 }
 
+function findAnchestor(className, element) {
+  return element.classList.contains(className) ? element : findAnchestor(className, element.parentElement)
+}
+
+function insertDuplicatedStatic(element) {
+  var parent = element.parentElement;
+  var duplicatedElement = document.createElement('input');
+  duplicatedElement.className = 'default-value';
+  duplicatedElement.value = element.value;
+  duplicatedElement.disabled = true;
+  parent.insertBefore(duplicatedElement, parent.childNodes[0]);
+}
+
+function addClassToAncestorParent(element, anchestorClassName,  className) {
+  new Promise(function(res, rej) {
+      var anchestor = findAnchestor(anchestorClassName, element);
+      anchestor ? res(anchestor) : rej()
+  })
+  .then(function(anchestor){
+    anchestor.parentElement.className = anchestor.parentElement.className.replace(className, "") + " " + className
+  })
+  .catch(function(e){ /* 0.0 */ });
+}
+
 function startEditor(editorDomNode, data) {
   var editor = new JSONEditor(editorDomNode, {schema: {}})
   editor.setValue(data)
+  Array.prototype.filter
+  .call(document.querySelectorAll('.form-control input'), function(element) { return element.value })
+  .map(function(el){ insertDuplicatedStatic(el);  addClassToAncestorParent(el, 'row', 'input-wrapper')});
   editor.on('change', function() { onEditorChange(editor) })
 }
 

@@ -18,6 +18,11 @@ h3 {
   margin: 10px 4px 20px;
 }
 
+.input-wrapper {
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
 button.json-editor-btn-collapse,
 button.json-editor-btn-edit,
 select,
@@ -31,7 +36,8 @@ label {
   color: #666;
 }
 
-input[type="text"] {
+input[type="text"],
+.default-value {
   display: block;
   width: 100%;
   max-width: 500px;
@@ -49,5 +55,22 @@ input[type="text"] {
   -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
   -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
   transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+input[type="text"] {
   margin-bottom: 50px;
+}
+
+.default-value {
+  margin-bottom: 10px;
+  background-color: #eee;
+  cursor: not-allowed;
+}
+
+.row {
+  margin-bottom: 50px;
+}
+
+.input-wrapper .row {
+  margin-bottom: 25px;
 }
