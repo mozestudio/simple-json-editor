@@ -1,0 +1,53 @@
+body {
+  font-family: Helvetica, sans-serif;
+}
+
+h3 {
+  height: 0;
+  margin-top: 0;
+}
+
+.export-JSON {
+  display: none;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #dadada;
+  border-radius: 3px;
+  padding: 10px;
+  float: left;
+  margin: 10px 4px 20px;
+}
+
+button.json-editor-btn-collapse,
+button.json-editor-btn-edit,
+select,
+[data-schemaid="root"] > label {
+  display: none !important;
+}
+
+label {
+  text-transform: capitalize;
+  font-weight: 400 !important;
+  color: #666;
+}
+
+input[type="text"] {
+  display: block;
+  width: 100%;
+  max-width: 500px;
+  height: 34px;
+  padding: 6px 12px;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #555;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+  -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+  -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+  margin-bottom: 50px;
+}
